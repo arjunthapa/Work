@@ -9,7 +9,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
-import org.json.simple.parser.ParseException;
 
 /**
  *
@@ -20,7 +19,7 @@ public class Work {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws IOException, FileNotFoundException, ParseException {
+    public static void main(String[] args) throws IOException, FileNotFoundException{
         // TODO code application logic here
 //        JFrame win = new JFrame("Guitar Chords and Lyrics");
 //        win.add(new Screen());
