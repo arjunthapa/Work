@@ -10,15 +10,24 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 /**
- *
+ * @version 1.0v
  * @author SHAUGAN
  */
 public class PlayScreen extends JPanel {
     
+    
+    //LyricsManager reference which will be passed by the ListManager to Playscreen.
+    LyricsManager lm;
+    
+    
+    /**
+     * Play screen will show the lyrics line on screen
+     */
     public PlayScreen()
     {
-        
+        this.lm = lm;
     }
+    @Override
     public void paint(Graphics g)
     {
         g.setColor(Color.white);
