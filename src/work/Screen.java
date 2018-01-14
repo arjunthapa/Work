@@ -43,6 +43,7 @@ public class Screen extends JPanel {
         sb = new SideBar(new Dimension(x, (int) screenSize.getHeight()));
         side.add(sb);
         workSpace.setLayout(new BorderLayout());
+        //Comment added here.
         
         
         
