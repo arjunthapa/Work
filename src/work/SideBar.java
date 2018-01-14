@@ -49,10 +49,8 @@ public class SideBar extends JPanel{
 //        DefaultListModel lm = new DefaultListModel();
 //        for(int i=0;i<100;i++)
 //        lm.addElement("Saugan Shrestha");
-        
-        ListManager lm = new ListManager("C:\\Users\\badbo\\Documents\\NetBeansProjects\\Work\\src\\work\\lyrics");
-        
-        
+        String currentDir = System.getProperty("user.dir");
+        ListManager lm = new ListManager(currentDir+"/src/work/lyrics");
         list.setModel(lm.getAllFiles());
     }
     public void addSearchPanel()
