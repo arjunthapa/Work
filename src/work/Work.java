@@ -9,42 +9,27 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import javax.swing.JFrame;
 
 /**
  *
- * @author badbo
+ * @author Arjun
  */
 public class Work {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
+     * @throws java.io.FileNotFoundException
      */
     public static void main(String[] args) throws IOException, FileNotFoundException{
         // TODO code application logic here
-//        JFrame win = new JFrame("Guitar Chords and Lyrics");
-//        win.add(new Screen());
-//        win.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//        win.setUndecorated(true);
-//        win.setVisible(true);
-        LyricsManager lm = new LyricsManager();
-        //TODO: Path has to be taken automatically
-         String currentDir = System.getProperty("user.dir");
-        System.out.println("Current dir using System:" +currentDir);
+        JFrame win = new JFrame("Guitar Chords and Lyrics");
+        win.add(new Screen());
+        win.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        win.setUndecorated(true);
+        win.setVisible(true);
         
-        lm.readLyrics(currentDir+"\\src\\work\\lyrics\\Sambodhan.lyr");
-        ArrayList<LyricsLine> lyrics = lm.getLyrics();
-        
-        for (Iterator<LyricsLine> iterator = lyrics.iterator(); iterator.hasNext();) {
-            LyricsLine next = iterator.next();
-            ArrayList<LyricsWords> wordList = next.getLyricsWords();
-            //System.out.println("WordList Length: "+wordList.size());
-            
-            for (Iterator<LyricsWords> iterator1 = wordList.iterator(); iterator1.hasNext();) {
-                LyricsWords words = iterator1.next();
-                System.out.printf(" %s [%s](%s) ",words.getColor().toString(),words.getChord(),words.getWords());
-            }
-            System.out.println();
-        }
     }
 
 }
