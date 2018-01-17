@@ -7,6 +7,7 @@ package work;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
@@ -30,7 +31,7 @@ public class PlayScreen extends JPanel {
     @Override
     public void paint(Graphics g)
     {
-        g.setColor(Color.white);
+        g.setColor(Color.red);
         g.drawString("This is a sample lyrics....here lyrics line will be shown", 300, 400);
     }
     public boolean nextLine()
@@ -38,5 +39,13 @@ public class PlayScreen extends JPanel {
         //Here goes the code to remove the first line and add the last line.
         this.repaint();
         return false;
+    }
+    public void newFrame()
+    {
+        JFrame jf = new JFrame();
+        jf.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        jf.setUndecorated(true);
+        jf.add(new PlayScreen());
+        jf.setVisible(true);
     }
 }
