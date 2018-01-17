@@ -7,8 +7,6 @@ package work;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import javax.swing.JFrame;
 
 /**
@@ -22,14 +20,13 @@ public class Work {
      * @throws java.io.IOException
      * @throws java.io.FileNotFoundException
      */
-    public static void main(String[] args) throws IOException, FileNotFoundException{
+    public static void main(String[] args) throws IOException, FileNotFoundException {
         // TODO code application logic here
         JFrame win = new JFrame("Guitar Chords and Lyrics");
         win.add(new Screen());
         win.setExtendedState(JFrame.MAXIMIZED_BOTH);
         win.setUndecorated(true);
         win.setVisible(true);
-        
     }
 
 }
