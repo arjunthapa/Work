@@ -27,12 +27,12 @@ public class SideBar extends JPanel{
     private Dimension dimension;
     JList<String> list = new JList();
     JScrollPane sp = new JScrollPane(list);
+    ListManager lm;
     
-    
-    public SideBar(Dimension dimension)
+    public SideBar(Dimension dimension,ListManager lm)
     {
         this.dimension = dimension;
-        
+        this.lm = lm;
         this.setPreferredSize(dimension);
         searchPanel = new JPanel();
         listPanel =  new JPanel();
@@ -42,15 +42,10 @@ public class SideBar extends JPanel{
         
         addSearchPanel();
         addlistPanel();
-        testList();
+        readList();
     }
-    private void testList()
+    private void readList()
     {
-//        DefaultListModel lm = new DefaultListModel();
-//        for(int i=0;i<100;i++)
-//        lm.addElement("Saugan Shrestha");
-        String currentDir = System.getProperty("user.dir");
-        ListManager lm = new ListManager(currentDir+"/src/work/lyrics");
         list.setModel(lm.getAllFiles());
     }
     public void addSearchPanel()
