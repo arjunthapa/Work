@@ -23,6 +23,7 @@ public class Screen extends JPanel {
     JPanel side = new JPanel();
     JPanel workSpace = new JPanel();
     SideBar sb;
+    WorkSpace ws;
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
     public Screen() throws IOException {
@@ -39,11 +40,13 @@ public class Screen extends JPanel {
         this.add(workSpace);
 
         
-        
         sb = new SideBar(new Dimension(x, (int) screenSize.getHeight()));
         side.add(sb);
         workSpace.setLayout(new BorderLayout());
         //Comment added here.
+        
+        ws = new WorkSpace(new Dimension((int) (screenSize.getWidth() - x), (int) screenSize.getHeight()));
+        workSpace.add(ws);
         
         
         
