@@ -41,11 +41,21 @@ public class ListManager {
         }
         return null;
     }
-    
+    String currentLyrics;
+    public void setSelectedLyrics(String currentLyrics)
+    {
+        this.currentLyrics=currentLyrics;
+    }
+    public String getSelectedLyrics()
+    {
+        //TODO : must return the selected list item string. 
+        return currentLyrics;
+    }
     public LyricsManager getLyricsManager()
     {
-        //TODO: must create a lyricsManager object.
-        
+        //TODO : must create a lyricsManager object.
+        LyricsManager ly =new LyricsManager();
+        ly.readLyrics(path+currentLyrics);
         return new LyricsManager();
     }
     
