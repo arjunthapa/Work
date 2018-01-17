@@ -24,7 +24,7 @@ public class PlayScreen extends JPanel {
     /**
      * Play screen will show the lyrics line on screen
      */
-    public PlayScreen()
+    public PlayScreen(LyricsManager lm)
     {
         this.lm = lm;
     }
@@ -40,12 +40,5 @@ public class PlayScreen extends JPanel {
         this.repaint();
         return false;
     }
-    public void newFrame()
-    {
-        JFrame jf = new JFrame();
-        jf.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        jf.setUndecorated(true);
-        jf.add(new PlayScreen());
-        jf.setVisible(true);
-    }
+    
 }
