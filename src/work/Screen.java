@@ -25,9 +25,12 @@ public class Screen extends JPanel {
     SideBar sb;
     WorkSpace ws;
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-
+    ListManager lm;
     public Screen() throws IOException {
-
+         String currentDir = System.getProperty("user.dir");
+         currentDir = currentDir+"/src/work/lyrics/";
+         System.out.println("Current Directory for lyrics: "+currentDir);
+        lm = new ListManager(currentDir);
         int x = (int) (screenSize.getWidth() * 0.3f);
         side.setBackground(Color.red);
         side.setPreferredSize(new Dimension(x, (int) screenSize.getHeight()));
@@ -40,12 +43,12 @@ public class Screen extends JPanel {
         this.add(workSpace);
 
         
-        sb = new SideBar(new Dimension(x, (int) screenSize.getHeight()));
+        sb = new SideBar(new Dimension(x, (int) screenSize.getHeight()),lm);
         side.add(sb);
         workSpace.setLayout(new BorderLayout());
         //Comment added here.
         
-        ws = new WorkSpace(new Dimension((int) (screenSize.getWidth() - x), (int) screenSize.getHeight()));
+        ws = new WorkSpace(new Dimension((int) (screenSize.getWidth() - x), (int) screenSize.getHeight()),lm);
         workSpace.add(ws);
         
         
