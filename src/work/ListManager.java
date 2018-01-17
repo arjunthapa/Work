@@ -42,6 +42,11 @@ public class ListManager {
         return null;
     }
     
-    
+    public LyricsManager getLyricsManager()
+    {
+        //TODO: must create a lyricsManager object.
+        
+        return new LyricsManager();
+    }
     
 }
