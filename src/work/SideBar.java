@@ -45,6 +45,12 @@ public class SideBar extends JPanel{
         addSearchPanel();
         addlistPanel();
         readList();
+        designList();
+    }
+    private void designList()
+    {
+        list.setSelectionBackground(Color.blue);
+        list.setSelectionForeground(Color.white);
     }
     private void readList()
     {
