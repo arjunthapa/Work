@@ -48,7 +48,7 @@ public class ListManager {
     }
     public String getSelectedLyrics()
     {
-        //TODO : must return the selected list item string. 
+        //TODO : must return the selected list item string.
         return currentLyrics;
     }
     public LyricsManager getLyricsManager()
@@ -56,7 +56,7 @@ public class ListManager {
         //TODO : must create a lyricsManager object.
         LyricsManager ly =new LyricsManager();
         ly.readLyrics(path+currentLyrics);
-        return new LyricsManager();
+        return ly;
     }
     
 }
