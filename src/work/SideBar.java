@@ -12,6 +12,8 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 /**
  *
@@ -63,5 +65,17 @@ public class SideBar extends JPanel{
         
         listPanel.add(sp);
         this.add(listPanel);
+        list.addListSelectionListener(new ListSelectionListener()
+        {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                JList source = (JList)e.getSource();
+                System.out.println(source.getSelectedValue());
+            }
+            
+        });
+        
+        
+        
     }
 }
