@@ -41,7 +41,7 @@ public class LyricsLine {
         //Here code must be written for breaking down line into words
         String[] list = lLine.split("\\|");
         System.out.println("List length: "+list.length);
-        Color colorList[] = {Color.YELLOW,Color.lightGray,Color.WHITE,Color.orange,Color.YELLOW,Color.lightGray,Color.WHITE,Color.orange};
+        Color colorList[] = {Color.YELLOW,Color.MAGENTA,Color.WHITE,Color.blue,Color.CYAN,Color.lightGray,Color.GREEN,Color.WHITE};
         int i=0;
         for (String string : list) {
             //System.out.println(string);
