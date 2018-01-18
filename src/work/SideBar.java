@@ -70,8 +70,14 @@ public class SideBar extends JPanel{
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 JList source = (JList)e.getSource();
-                System.out.println(source.getSelectedValue());
-            }
+                if(!e.getValueIsAdjusting())
+                {
+                    String lyrics = ""+source.getSelectedValue();
+                    lm.setSelectedLyrics(lyrics);
+                    System.out.println("Selected Item stored by lyrics manager is : "+lm.getSelectedLyrics());
+                    
+                }
+               }
             
         });
         
