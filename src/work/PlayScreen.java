@@ -36,58 +36,36 @@ public class PlayScreen extends JPanel {
             cl = lm.getLyrics().get(0);
             System.out.println(cl.getLine());
         }
-        Thread th = new Thread(){
-            
-            @Override
-            public void run()
-                {
-                    for(int i=0;i<lm.getLyrics().size();i++)
-                    {
-                        try {
-                            Thread.sleep(2000);
-                            nextLine();
-                        } catch (InterruptedException ex) {
-                            Logger.getLogger(PlayScreen.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                    }
-                }
-            
-            
-        };
-        th.start();
+        new Thread(new AutoScroller(this,2,lm.getLyrics().size())).start();
     }
 
     @Override
     public void paint(Graphics g) {
-     
+        super.paint(g);
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, 2000, 2000);
         g.setFont(new Font("TimesRoman", Font.PLAIN, 40));
       
-         ArrayList<LyricsWords> lw = cl.getLyricsWords();
-//         g.setColor(Color.RED);
-////        g.drawString(TOOL_TIP_TEXT_KEY, WIDTH, WIDTH);
-            int x=100;
+        ArrayList<LyricsWords> lw = cl.getLyricsWords();
+        int x=200;
         for (LyricsWords lyricsWords : lw) {
             
             g.setColor(lyricsWords.getColor());
-            
             g.drawString(lyricsWords.getChord(), x, 350);
             g.drawString(lyricsWords.getWords(), x, 400);
-            x=x+(lyricsWords.getWords().length()*28);
+            x=x+(g.getFontMetrics().stringWidth(lyricsWords.getWords())+10);
         }
-        nextLine();
+        
       
     }
 int i=0;
     public boolean nextLine() {
         //Here goes the code to remove the first line and add the last line.
-        if(i<lm.getLyrics().size()) {
-            
+       
             cl = lm.getLyrics().get(i);
-            
+            i++;
             this.repaint();
-        }
+        
                 
         return false;
     }
