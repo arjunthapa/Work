@@ -23,7 +23,8 @@ public class LyricsManager {
 
     public boolean readLyrics(String lyricsName) {
 
-        lyrics.clear();
+        System.out.println("Lyrics passed by List Manager is: "+lyricsName);
+        this.lyrics.clear();
         FileReader fr = null;
         BufferedReader br = null;
 
@@ -38,8 +39,9 @@ public class LyricsManager {
 
             while ((line = br.readLine()) != null) {
                 //System.out.println(i + ">>  " + line);
-                lyrics.add(new LyricsLine(line));
+                this.lyrics.add(new LyricsLine(line));
             }
+            System.out.println("No of Lines inserted: "+this.lyrics.size());
             return true;
         } catch (FileNotFoundException ex) {
             Logger.getLogger(LyricsManager.class.getName()).log(Level.SEVERE, null, ex);
@@ -51,7 +53,7 @@ public class LyricsManager {
     }
 
     public ArrayList<LyricsLine> getLyrics() {
-        return lyrics;
+        return this.lyrics;
     }
 
 }
