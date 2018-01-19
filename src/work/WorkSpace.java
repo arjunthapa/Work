@@ -25,8 +25,7 @@ public class WorkSpace extends JPanel {
     private JPanel WorkSpacePane;
     private JButton btn;
     private ListManager lm;
-    private JPanel btnPane;
-    
+       
     public WorkSpace(Dimension dim,ListManager lm)
     {
         this.lm = lm;
@@ -34,7 +33,6 @@ public class WorkSpace extends JPanel {
         this.setPreferredSize(dim);
         WorkSpacePane = new JPanel();
         btn = new JButton("Play");
-        btnPane = new JPanel();
         
         addWorkSpacePane();
     }
@@ -56,15 +54,11 @@ public class WorkSpace extends JPanel {
                 JFrame jf = new JFrame();
                 jf.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 jf.setUndecorated(true);
+                System.out.println("Lyrics selected before creating playscreen: "+lm.currentLyrics);
                 jf.add(new PlayScreen(lm.getLyricsManager()));
                 jf.setVisible(true);
             }
         });
-    }
-    
-    public void addbtnPane()
-    {
-        btnPane.setPreferredSize(new Dimension());
     }
     
 }
